@@ -3,7 +3,7 @@ Code to control the data acquisition, sensory fusion and visualisation of the in
 
 Project completed as Final Year Thesis for the M.Eng. in Biomedical Engineering at Imperial College London, 2015.
 
-*Abstract*
+**Abstract**
 
 Design, development and testing of a wireless instrumented crutch, with the aim to produce a non-invasive, cheap, and portable tool to assist patients and therapists in rehabilitation, monitoring, and gait analysis. There is currently no quantitative and non-invasive way to continuously monitor gait and lower-limb weight bearing of a crutch user outside of a clinical environment. Sensorised crutches represent an ideal solution to assess rehabilitation activity, perform gait analysis, and monitor injury or disease progression. Moreover, they can prove a useful addition to the control system of powered exoskeletons for paraplegic patients.
 
