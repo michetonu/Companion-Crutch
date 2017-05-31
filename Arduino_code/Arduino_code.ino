@@ -29,7 +29,6 @@
  ===============================================
  */
 
-
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
 #include "Wire.h"
@@ -68,7 +67,7 @@ VectorInt16 aaReal;     // [x, y, z]            gravity-free accel sensor 
 VectorInt16 aaWorld;    // [x, y, z]            world-frame accel sensor measurements
 VectorFloat gravity;    // [x, y, z]            gravity vector
 float euler[3];         // [psi, theta, phi]    Euler angle container
-float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector
+float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container 
 
 // INTERRUPT DETECTION ROUTINE            
 
@@ -238,7 +237,7 @@ void loop() {
   fsrReading2 = analogRead(fsrPin2); 
   fsrReadingF = analogRead(fsrPinF); // Read sensors output from respective FSR pins
 
-  fsrReadingF = exp((fsrReadingF+67.387)/48.693)-1; // Equation from calibration 
+  fsrReadingF = exp((fsrReadingF+67.387)/48.693)-1; // Calibration 
 
   Serial.print(ypr[1] * 180/M_PI); // Print out tilt and force reading to serial monitor, as an output to Processing
   Serial.print(",");

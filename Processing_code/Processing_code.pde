@@ -1,4 +1,5 @@
 // Code by Michele Tonutti, based on the GWOptics library and examples.
+// Draw a rolling graph of sensor data from an Arduino connected to a sensorised crutch.
 
 import processing.serial.*; 
 import org.gwoptics.graphics.graph2D.Graph2D;
@@ -19,8 +20,6 @@ Graph2D g;
 Graph2D f;
 int t=0;
 
-
-
 void setup(){
  size(1200,800);
        println(Serial.list());
@@ -29,19 +28,19 @@ void setup(){
  myPort.bufferUntil('\n');
 
 
- Fx  = new RollingLine2DTrace(new eq_F(),20,.025f);
+ Fx = new RollingLine2DTrace(new eq_F(),20,.025f);
  Fx.setTraceColour(0, 0, 255);
 
-  f = new Graph2D(this, 1000, 300, false);
-  f.setYAxisMin(0);
-  f.setYAxisMax(500);
-  f.addTrace(Fx);
-  f.position.y = 400;
-  f.position.x = 100;
-  f.setYAxisTickSpacing(50);
-  f.setXAxisTickSpacing(1);
-  f.setXAxisMax(20f);
-   f.setYAxisLabel("Force (N)");
+ f = new Graph2D(this, 1000, 300, false);
+ f.setYAxisMin(0);
+ f.setYAxisMax(500);
+ f.addTrace(Fx);
+ f.position.y = 400;
+ f.position.x = 100;
+ f.setYAxisTickSpacing(50);
+ f.setXAxisTickSpacing(1);
+ f.setXAxisMax(20f);
+ f.setYAxisLabel("Force (N)");
  f.setXAxisLabel("Time (s)");
   
  rx  = new RollingLine2DTrace(new eq_x(),20,.025f);
@@ -59,7 +58,6 @@ void setup(){
  g.setYAxisLabel("Tilt (º)");
  g.setXAxisLabel("Time (s)");
  
-
 }
 
 void draw(){
